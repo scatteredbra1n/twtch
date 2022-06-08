@@ -45,8 +45,6 @@ nativefier(windowsOptions, function(error, appPath) {
 	if (error) {
 		console.error(error);
 		return;
-	} else {
-		zipper.sync.zip("./build/twtch-win32-x64/").compress().save(`twtch-windows-${package.version}.zip`)	
 	}
 
 	
@@ -70,8 +68,6 @@ nativefier(linuxOptions, function(error, appPath) {
 	if (error) {
 		console.error(error);
 		return;
-	} else {
-		zipper.sync.zip("./build/twtch-linux-x64/").compress().save(`twtch-linux-${package.version}.zip`)	
 	}
 
 	console.log("Twtch is ALIVE for LINUX!")
@@ -81,8 +77,6 @@ nativefier(macOptions, function(error, appPath) {
 	if (error) {
 		console.error(error);
 		return;
-	} else {
-		zipper.sync.zip("./build/twtch-darwin-x64/").compress().save(`twtch-macos-${package.version}.zip`)
 	}
 
 	console.log("Twtch is ALIVE for LINUX!")
