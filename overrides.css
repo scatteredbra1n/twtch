@@ -1,0 +1,62 @@
+:root {
+    --titlebarHeight: 40px;
+    --titleBarColor:  #FFFFFF;
+    --toolbarHoverColor:  rgba(0, 0, 0, 0.10);
+}
+
+.twtchTitlebar {
+    display: flex;
+    align-content:  center;
+    content: " ";
+    position: relative;;
+    height: var(--titlebarHeight);
+    width: 100%;
+    background: var(--titleBarColor);
+}
+
+.twtchTitlebar .buttonGroup {
+    margin-left:  70px; /* distance of the macOS icons */
+    width:  100%;
+    display:  flex;
+    align-content:  center;
+    -webkit-app-region: drag;
+}
+
+.top-nav {
+    -webkit-app-region: drag;
+}
+
+.top-nav .tw-animated-glitch-logo {
+    transform:  rotate(180deg);
+    transition:  transform 200ms ease-in-out;
+}
+
+.top-nav .tw-animated-glitch-logo:hover {
+    transform:  rotate(0);
+}
+
+.top-nav button,
+.top-nav input,
+.top-nav a {
+    -webkit-app-region: no-drag;
+}
+
+[title="Display Ad"] {
+    display:  none;
+}
+
+
+.twtchTitlebar .buttonGroup .btn {
+    appearance:  none;
+    -webkit-app-region: no-drag;
+    align-self:  center;
+    margin: 0;
+    padding: 5px;
+    height: 30px;
+    width: 30px;
+}
+
+.twtchTitlebar .buttonGroup .btn:hover {
+    background:  var(--toolbarHoverColor);
+    cursor: pointer !important;
+}
