@@ -1,6 +1,6 @@
 {
   "name": "twtch.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Twitch desktop client, since Twitch deprecated the official one!",
   "main": "index.js",
   "scripts": {
