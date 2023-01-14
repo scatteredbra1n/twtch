@@ -79,5 +79,5 @@ nativefier(macOptions, function(error, appPath) {
 		return;
 	}
 
-	console.log("Twtch is ALIVE for LINUX!")
+	console.log("Twtch is ALIVE for MAC!")
 });

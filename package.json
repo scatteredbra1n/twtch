@@ -1,6 +1,6 @@
 {
   "name": "twtch.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Twitch desktop client, since Twitch deprecated the official one!",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "electron-winstaller": "5.0.0",
-    "nativefier": "47.2.0",
+    "nativefier": "^50.0.1",
     "zip-local": "0.3.5"
   }
 }
