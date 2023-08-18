@@ -64,7 +64,6 @@
 .settingsGroup {
     display: none;
     width: 100%;
-    display: flex;
     app-region: drag;
     justify-content: flex-end
 }
