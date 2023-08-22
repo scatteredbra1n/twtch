@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node main.js",
-    "dist": "node create-dists.js",
+    "dist": "codesign --deep --force --verbose -s \"3G7BD9CRMB\" ./build/twtch-darwin-x64/twtch.app && node create-dists.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Josh Chaiken",
