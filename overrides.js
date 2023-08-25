@@ -44,7 +44,7 @@ const settingsModalTemplate = `
 	</div>
 `;
 twitchFrame.insertAdjacentHTML("beforebegin", titleBarTemplate);
-twitchFrame.insertAdjacentHTML("beforebegin", settingsModalTemplate);
+// twitchFrame.insertAdjacentHTML("beforebegin", settingsModalTemplate);
 
 document.addEventListener("click", toolbarActions);
 function toolbarActions(event) {
@@ -68,7 +68,14 @@ function toolbarActions(event) {
 }
 
 window.addEventListener('load', function () {
-	document.querySelector(".front-page-carousel").remove();
+	setTimeout(function() {
+		document.querySelector("[aria-label=\"Pause (space/k)\"]").click()
+	}, 1000);
+	
+	setTimeout(function() {
+		document.querySelector(".front-page-carousel").remove();
+	}, 1000)
+
 
 	setTimeout(function() {
 		const anchorLinks = document.querySelectorAll("a");
