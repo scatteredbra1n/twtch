@@ -15,6 +15,7 @@ const globalOptions = {
 	honest: false,
 	minHeight: 400,
 	minWidth: 400,
+	disableOldBuildWarningYesiknowitisinsecure: true,
 	inject: ["./overrides.css", "./overrides.js"]
 };
 
