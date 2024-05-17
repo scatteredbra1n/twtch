@@ -1,31 +1,75 @@
+/* ADDITIONS TO THE TWITCH PAGE */
 :root {
-    --titlebarHeight: 40px;
-    --titleBarColor:  #FFFFFF;
-    --toolbarHoverColor:  rgba(0, 0, 0, 0.10);
+    --twtch-text-color: #0e0e10;
 }
 
-.twtchTitlebar {
-    display: flex;
-    align-content:  center;
-    content: " ";
-    position: relative;;
-    height: var(--titlebarHeight);
+.tw-root--theme-dark {
+    --twtch-text-color: #efeff1;
+}
+
+.mac .windows,
+.linux .windows {
+    display: none;
+}
+
+.mac .twitchTitlebar .actions:nth-child(1) {
+    margin-left: 70px;
+}
+
+.twitchTitlebar {
     width: 100%;
-    background: var(--titleBarColor);
-}
-
-.twtchTitlebar .buttonGroup {
-    margin-left:  70px; /* distance of the macOS icons */
-    width:  100%;
-    display:  flex;
-    align-content:  center;
+    display: flex;
+    align-content: center;
+    height: 40px;
+    background: var(--color-background-base);
     -webkit-app-region: drag;
-}
+  }
+  .twitchTitlebar .actions {
+    width: 100%;
+    display: flex;
+    align-content: center;
+  }
+  .twitchTitlebar .actions svg {
+    height: 15px;
+    width: auto;
+  }
+  .twitchTitlebar .actions:nth-child(2) {
+    justify-content: end;
+  }
+  .twitchTitlebar .actions button {
+    -webkit-app-region: no-drag;
+    appearance: none;
+    width: 40px;
+    border: 0;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--twtch-text-color);
+    fill: var(--twtch-text-color);
+  }
 
-.top-nav {
-    -webkit-app-region: drag;
-}
+  .twitchTitlebar .actions rect {
+    stroke: var(--twtch-text-color);
+  }
+  .twitchTitlebar .actions path {
+    fill: var(--twtch-text-color);
+  }
+  .twitchTitlebar .actions button:hover {
+    background: var(--color-background-button-text-hover);
+  }
+  .twitchTitlebar #btnClose:hover {
+    background: #D33328;
+    color: white;
+  }
+  .twitchTitlebar #btnClose:hover svg path {
+    fill: white;
+  }
 
+  /* OVERRIDES TO THE TWITCH PAGE */
+  [title="Display Ad"] {
+    display:  none;
+}
 .top-nav .tw-animated-glitch-logo {
     transform:  rotate(180deg);
     transition:  transform 200ms ease-in-out;
@@ -35,78 +79,6 @@
     transform:  rotate(0);
 }
 
-.top-nav button,
-.top-nav input,
-.top-nav a {
-    -webkit-app-region: no-drag;
-}
-
-[title="Display Ad"] {
-    display:  none;
-}
-
-
-.twtchTitlebar .btn {
-    appearance:  none;
-    -webkit-app-region: no-drag;
-    align-self:  center;
-    margin: 0;
-    padding: 5px;
-    height: 30px;
-    width: 30px;
-}
-
-.twtchTitlebar .buttonGroup .btn:hover {
-    background:  var(--toolbarHoverColor);
-    cursor: pointer !important;
-}
-
-.settingsGroup {
+.front-page-carousel {
     display: none;
-    width: 100%;
-    app-region: drag;
-    justify-content: flex-end
-}
-
-.twtchSettingsModalOverlay {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 9999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-}
-
-
-.twtchSettingsModal {
-    padding: 20px;
-    height: 400px;
-    width: 500px;
-    background: white;
-    border: 1px solid gray;
-}
-
-.modalHeader {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.modalSection {
-    padding: 20px;
-}
-
-.modalSectionHeader {
-    font-weight: bold
-}
-
-.modalFooter {
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }

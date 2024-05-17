@@ -1,19 +1,66 @@
 {
   "name": "twtch.",
-  "version": "1.3",
+  "version": "2.0.0-beta1",
   "description": "Twitch desktop client, since Twitch deprecated the official one!",
   "main": "index.js",
   "scripts": {
-    "build": "node main.js",
-    "codesign": "codesign --deep --force --verbose -s \"3G7BD9CRMB\" ./build/twtch-darwin-x64/twtch.app",
-    "dist": "npm run codesign && node create-dists.js",
+    "start": "cross-env isDev=true electron .",
+    "dist-win": "electron-builder -w",
+    "dist-linux": "electron-builder -l",
+    "dist-mac": "electron-builder -m",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build": {
+    "appId": "com.scatteredbrain.twtch",
+    "productName": "twtch",
+    "files": [
+      "index.js",
+      "overrides.js",
+      "overrides.css",
+      "Twtch.png"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "icon": "Twtch.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "mac": {
+      "icon": "Twtch.icns",
+      "category": "public.app-category.utilities",
+      "target": [
+        "dmg"
+      ]
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "deleteAppDataOnUninstall": true
+    }
   },
   "author": "Josh Chaiken",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "electron": "^30.0.6",
+    "electron-builder": "^24.13.3",
     "electron-winstaller": "5.0.0",
-    "nativefier": "^50.1.1",
     "zip-local": "0.3.5"
   }
 }
