@@ -7,12 +7,11 @@
     --twtch-text-color: #efeff1;
 }
 
-.mac .windows,
-.linux .windows {
-    display: none;
+.os-mac .twitchTitlebar .actions:nth-child(2) {
+  display: none;
 }
 
-.mac .twitchTitlebar .actions:nth-child(1) {
+.os-mac .twitchTitlebar .actions:nth-child(1) {
     margin-left: 70px;
 }
 

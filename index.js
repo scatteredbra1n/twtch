@@ -10,7 +10,9 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    frame: false,
+    titleBarStyle: 'hidden',
+    trafficLightPosition: { x: 10, y: 11 },
+    titleBarOverlay: true,
     icon: path.join(__dirname, 'Twtch.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
