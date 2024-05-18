@@ -1,10 +1,10 @@
 {
   "name": "twtch.",
-  "version": "2.0.0-beta1",
+  "version": "2.0.0-beta4",
   "description": "Twitch desktop client, since Twitch deprecated the official one!",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env isDev=true electron .",
+    "start": "cross-env isDev=TRUE electron .",
     "dist-win": "electron-builder -w",
     "dist-linux": "electron-builder -l",
     "dist-mac": "electron-builder -m",
@@ -17,7 +17,8 @@
       "index.js",
       "overrides.js",
       "overrides.css",
-      "Twtch.png"
+      "Twtch.png",
+      "preload.js"
     ],
     "directories": {
       "buildResources": "assets"

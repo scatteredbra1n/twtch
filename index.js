@@ -8,16 +8,18 @@ const url = "https://twitch.tv";
 // Function to create a new browser window
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1280,
+    height: 800,
     titleBarStyle: 'hidden',
     trafficLightPosition: { x: 10, y: 11 },
-    titleBarOverlay: true,
+    frame: false,
+    titleBarOverlay: false,
     icon: path.join(__dirname, 'Twtch.png'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
-      enableRemoteModule: false
+      enableRemoteModule: false,
+      nodeIntegration: true
     },
   });
 
@@ -37,7 +39,7 @@ function createWindow() {
       
             // Inject the JavaScript code
             win.webContents.insertCSS(data).then(result => {
-              console.log('Custom JavaScript executed successfully.');
+              //
             }).catch(err => {
               console.error('Failed to execute custom CSS:', err);
             });
@@ -52,7 +54,7 @@ function createWindow() {
   
         // Inject the JavaScript code
         win.webContents.executeJavaScript(data).then(result => {
-          console.log('Custom JavaScript executed successfully.');
+          //
         }).catch(err => {
           console.error('Failed to execute custom JavaScript:', err);
         });
@@ -82,7 +84,7 @@ function createWindow() {
   ipcMain.on('show-notification', (event, { title, body }) => {
     new Notification({ title, body }).show();
   });
-  
+
   ipcMain.handle('get-os', () => {
     return process.platform;
   });

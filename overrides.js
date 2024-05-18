@@ -164,7 +164,6 @@ function toolbarActions(event) {
     var head = document.getElementsByTagName('head')[0];
     if (!head) return;
     head.appendChild(script);
-	console.log("its happening!!!!!")
 })()
 
 window.addEventListener('load', function () {
