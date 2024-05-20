@@ -2,3 +2,6 @@
 build/
 node_modules/
 dist/
+.env
+*.p12
+notarize.mac.js
