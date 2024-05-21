@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, Notification } = require('electron');
+const { app, BrowserWindow, ipcMain, Notification, shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
 
@@ -27,6 +27,13 @@ function createWindow() {
   win.loadURL(url);
 
   process.env.isDev  && win.webContents.openDevTools();
+
+  win.webContents.setWindowOpenHandler(({ url }) => {
+    if (url.startsWith('https:')) {
+        shell.openExternal(url);
+    }
+    return { action: 'deny' };
+});
 
   // Inject CSS after the content has loaded
   win.webContents.on('did-finish-load', () => {

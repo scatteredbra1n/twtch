@@ -10,7 +10,8 @@ const callback = function(mutationsList, observer) {
 	  mutation.addedNodes.forEach(node => {
 		if (node.nodeType === 1 && node.classList.contains('tw-notification')) {
 		  if (node.innerText.includes('is live')) {
-			window.electronAPI.showNotification('Twitch Notification', node.innerText);
+			window.electronAPI.showNotification('twtch', node.innerText);
+			console.log("~~~~~~~~~~WE GOT AN ALERT~~~~~~~~~~",node.innerText)
 		  }
 		}
 	  });
@@ -169,11 +170,11 @@ function toolbarActions(event) {
 window.addEventListener('load', function () {
 	setTimeout(function() {
 		document.querySelector("[aria-label=\"Pause (space/k)\"]").click()
-	}, 100);
+	}, 1000);
 	
 	setTimeout(function() {
 		document.querySelector(".front-page-carousel").remove();
-	}, 100)
+	}, 1000)
 
 	setTimeout(function() {
 		document.querySelector("body").insertAdjacentHTML("beforebegin", "<div class='tw-notification'>Test Test test<div>test</div><p>test</p><span>test</span></div>");
@@ -186,5 +187,5 @@ window.addEventListener('load', function () {
 		anchorLinks.forEach(function(anchorLink) {
 			anchorLink.setAttribute("oncontextmenu", "return false;")
 		});
-	}, 100)
+	}, 1000)
 });
