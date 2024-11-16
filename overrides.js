@@ -166,26 +166,3 @@ function toolbarActions(event) {
     if (!head) return;
     head.appendChild(script);
 })()
-
-window.addEventListener('load', function () {
-	setTimeout(function() {
-		document.querySelector("[aria-label=\"Pause (space/k)\"]").click()
-	}, 1000);
-	
-	setTimeout(function() {
-		document.querySelector(".front-page-carousel").remove();
-	}, 1000)
-
-	setTimeout(function() {
-		document.querySelector("body").insertAdjacentHTML("beforebegin", "<div class='tw-notification'>Test Test test<div>test</div><p>test</p><span>test</span></div>");
-	})
-
-
-	setTimeout(function() {
-		const anchorLinks = document.querySelectorAll("a");
-		console.log(anchorLinks.length)
-		anchorLinks.forEach(function(anchorLink) {
-			anchorLink.setAttribute("oncontextmenu", "return false;")
-		});
-	}, 1000)
-});
